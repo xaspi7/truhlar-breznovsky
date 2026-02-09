@@ -3,7 +3,9 @@ import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
 
 export default defineConfig({
-  integrations: [tailwind(), alpinejs()],
-  site: "https://breznovsky.github.io",
-  base: "/truhlar-breznovsky/",
+  site: "https://breznovskytruhlar.cz",
+  integrations: [
+    tailwind(),
+    alpinejs(),
+  ],
 });
