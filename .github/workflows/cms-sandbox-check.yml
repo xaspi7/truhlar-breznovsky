@@ -1,0 +1,25 @@
+name: CMS Sandbox - Build Only
+
+on:
+  push:
+    branches:
+      - cms-sandbox
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sandbox
+        uses: actions/checkout@v4
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build Astro (do not deploy)
+        run: npm run build
